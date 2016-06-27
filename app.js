@@ -1,17 +1,19 @@
 var Express = require('express');
 var app = new Express();
-
+var baseRoute = require("./routes")
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var swig = require('swig');
+var path = require('path')
 
 app.use(Express.static('./public'));
 
 
+
 // templating boilerplate setup
 app.engine('html', swig.renderFile); // how to render html templates
-// app.set('view engine', 'html'); // what file extension do our templates have
-// app.set('views', path.join(__dirname, '/views')); // where to find the views
+app.set('view engine', 'html'); // what file extension do our templates have
+app.set('views', path.join(__dirname, '/views')); // where to find the views
 swig.setDefaults({ cache: false });
 
 // logging middleware
@@ -20,6 +22,14 @@ app.use(morgan('dev'));
 // body parsing middleware
 app.use(bodyParser.urlencoded({ extended: true })); // for HTML form submits
 app.use(bodyParser.json()); // would be for AJAX requests
+
+app.get('/', function (req, res, next){
+  console.log("were here")
+  next()
+})
+app.use('/', baseRoute())
+
+
 
 // catch 404 (i.e., no route was hit) and forward to error handler
 app.use(function(req, res, next) {
