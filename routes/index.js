@@ -8,6 +8,15 @@ var Hotel = require('../models/hotel');
 var Restaurant = require('../models/restaurant');
 var Activity = require('../models/activity');
 
+//  HARDCODED DATA for initial testing
+var myActivities = [[], [], []];
+var myDays = 3;
+var dayList = [];
+for (var i = 1; i <= myDays; i++) {
+    dayList.push(i);
+}
+
+
 
 module.exports = function makesRouter() {
 router.get('/', function (req, res, next){
@@ -17,7 +26,8 @@ router.get('/', function (req, res, next){
   Promise.all(Promises)
   .spread (function(p1,p2,p3){
     dbHotels = p1, dbRestaurants = p2, dbActivities = p3;
-res.render('index', {dbHotels:dbHotels, dbRestaurants:dbRestaurants, dbActivities:dbActivities})
+res.render('index', {dbHotels:dbHotels, dbRestaurants:dbRestaurants, dbActivities:dbActivities,
+    myDays:dayList})
   })
 
 })

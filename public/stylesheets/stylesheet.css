@@ -1,2 +1,37 @@
 body {
   background-color: grey; }
+
+.navbar-cont {
+  background-color: orange; }
+
+.option-panel {
+    float: right;
+}
+
+.option-selections {
+    background-color: brown;
+    padding: 20px 100px 20px 20px;
+}
+
+.option-selections select {
+    width: 85%;
+}
+
+.option-days {
+    background-color: green;
+    padding: 20px 100px 20px 20px;
+}
+
+.daybar {
+    background-color: orange;
+    width: 100%;
+    padding:4% 0 4% 7%;
+}
+
+.map-panel {
+    float: left;
+}
+
+.day-btn {
+    background-color: blue;
+}

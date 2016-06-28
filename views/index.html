@@ -1,42 +1,98 @@
  {% extends "layout.html" %} {% block content %}
 
 <body>
+    <div class="container navbar-cont">
+     Navbar goes here
+    </div>
+
+
     <div class="page-header">
         <h1>Welcome to TRIP PLANNER</h1>
     </div>
-    <div class="row">
-        <h2><b>Hotels</b></h2></div>
-    <div>
-    Hotels:
-        <select>
+  
+    <div class="map-panel">
+    <h1>Put map here</h1>
+    </div>
+
+
+    <div class="option-panel">
+    <div class="option-selections">
+    <p>Hotels:</p>
+        <p><select>
             {% for hotel in dbHotels %}
            <option value={{hotel.name}}> {{hotel.name}} </option>
             {% endfor %}
-        </select>
-    Restaurants:
-        <select>
+          </select>
+        <input class="btn btn-default btn-xs btn-success" type="button" value="+"> </p>
+      
+    <p>Restaurants:</p>
+        <p><select>
             {% for restaurant in dbRestaurants %}
-            <option value={{restaurant.name}}> {{restaurant.name}} </option>
+            <option value={{restaurant.name}}> {{restaurant.name}} 
+             </option>
             {% endfor %}
         </select>
-    Activities
-        <select>
+        <input class="btn btn-default btn-xs btn-success" type="button" value="+"> </p>
+        
+    <p>Activities</p>
+        <p><select>
             {% for activity in dbActivities %}
             <option value={{activity.name}}> {{activity.name}} </option>
             {% endfor %}
-        </select>
-    </div>
-    <!--       <div class="row tweet">
-        <div class="col-md-1 tweetbox"><img></div>
-        <div class="col-md-11"> -->
-    <!-- tweet name and tweet text-->
-    <!--
-            <b><a href="/user/{{tweet.name}}" id="tweetNAME">{{hotel.name}}</a></b><br>
-            <a href="/tweets/{{tweet.id}}" id="tweetID">{{hotel.num_stars}}</a><br>
+         </select>
+        <input class="btn btn-default btn-xs btn-success" type="button" value="+"> </p>
+       </div>
 
-            <button>Re-tweet</button><br>
+        <div class="option-daylabel">
+        <p>
+            <h2>Day {{daynum}}</h2>
+        </p>
         </div>
- -->
-    <!--     </div> -->
+
+         <div class="daybar">
+                 {% for day in myDays %}
+        <input class="btn btn-default btn-sm day-btn" type="button" value={{day}}>
+          {% endfor %}
+          <input class="btn btn-default btn-sm day-btn" type="button" value="+">
+ 
+        </div>
+
+        <div class="option-days">
+        <p>My Hotel</p>
+        <p>
+            <ul>
+            <li>  Hotel Number 1 
+            <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
+            </ul>
+        </p>
+
+        <p>My Restaurants</p>
+        <p>
+            <ul>
+            <li>  Restaurant Number 1 
+            <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
+ 
+            <li>  Restaurant Number 2 
+            <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
+            <li>  Restaurant Number 3 
+            <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
+            </ul>
+        </p>
+
+        <p>My Activities</p>
+        <p>
+            <ul>
+            <li>  Activity Number 1 
+            <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
+            <li>  Activity Number 2 
+            <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
+            </ul>
+        </p>
+
+
+        </div>
+
+    </div>
+
 </body>
 {% endblock %}
