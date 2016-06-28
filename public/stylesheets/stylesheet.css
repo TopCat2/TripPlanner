@@ -29,7 +29,9 @@ body {
 }
 
 .map-panel {
+  height: 600px;
     float: left;
+    width:60%;
 }
 
 .day-btn {

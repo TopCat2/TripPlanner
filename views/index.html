@@ -1,17 +1,31 @@
+<!-- AIzaSyByNsm7d4tL4gZskIUi5ZDtd8Kr7b4MhL4  -->
+
  {% extends "layout.html" %} {% block content %}
 
 <body>
+ <script src="/js/gmap.js"></script>
     <div class="container navbar-cont">
-     Navbar goes here
+    <div class="navbar-brand">TRIP PLANNER</div>
+   <nav class="navbar navbar-full navbar-light bg-faded">
+<ul class="nav navbar-nav">
+<li class="active">
+<a href ="">Home</a></li>
+<li class="active">
+<a href ="localhost:3000/about">About</a></li>
+<li class="active">
+<a href ="localhost:3000/contact">Contact</a></li>
+</ul>
+</nav>
     </div>
 
 
     <div class="page-header">
         <h1>Welcome to TRIP PLANNER</h1>
     </div>
-  
-    <div class="map-panel">
+
+    <div class="map-panel" id="map">
     <h1>Put map here</h1>
+
     </div>
 
 
@@ -24,16 +38,16 @@
             {% endfor %}
           </select>
         <input class="btn btn-default btn-xs btn-success" type="button" value="+"> </p>
-      
+
     <p>Restaurants:</p>
         <p><select>
             {% for restaurant in dbRestaurants %}
-            <option value={{restaurant.name}}> {{restaurant.name}} 
+            <option value={{restaurant.name}}> {{restaurant.name}}
              </option>
             {% endfor %}
         </select>
         <input class="btn btn-default btn-xs btn-success" type="button" value="+"> </p>
-        
+
     <p>Activities</p>
         <p><select>
             {% for activity in dbActivities %}
@@ -54,14 +68,14 @@
         <input class="btn btn-default btn-sm day-btn" type="button" value={{day}}>
           {% endfor %}
           <input class="btn btn-default btn-sm day-btn" type="button" value="+">
- 
+
         </div>
 
         <div class="option-days">
         <p>My Hotel</p>
         <p>
             <ul>
-            <li>  Hotel Number 1 
+            <li>  Hotel Number 1
             <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
             </ul>
         </p>
@@ -69,12 +83,12 @@
         <p>My Restaurants</p>
         <p>
             <ul>
-            <li>  Restaurant Number 1 
+            <li>  Restaurant Number 1
             <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
- 
-            <li>  Restaurant Number 2 
+
+            <li>  Restaurant Number 2
             <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
-            <li>  Restaurant Number 3 
+            <li>  Restaurant Number 3
             <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
             </ul>
         </p>
@@ -82,9 +96,9 @@
         <p>My Activities</p>
         <p>
             <ul>
-            <li>  Activity Number 1 
+            <li>  Activity Number 1
             <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
-            <li>  Activity Number 2 
+            <li>  Activity Number 2
             <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
             </ul>
         </p>
