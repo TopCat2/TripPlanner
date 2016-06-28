@@ -4,7 +4,9 @@ var baseRoute = require("./routes")
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var swig = require('swig');
-var path = require('path')
+var path = require('path');
+// var bootstrap = require ('/node_modules/bootstrap/dist')
+// var jquery = require ('/node_modules/jquery/dist')
 
 app.use(Express.static('./public'));
 
@@ -28,7 +30,8 @@ app.get('/', function (req, res, next){
   next()
 })
 app.use('/', baseRoute())
-
+app.use('/jquery', Express.static('./node_modules/jquery/dist'))
+app.use('/bootstrap', Express.static('./node_modules/bootstrap/dist'));
 
 
 // catch 404 (i.e., no route was hit) and forward to error handler
