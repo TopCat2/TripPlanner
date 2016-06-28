@@ -72,34 +72,33 @@
         </div>
 
         <div class="option-days">
-        <p>My Hotel</p>
+        <p>My Hotels</p>
         <p>
             <ul>
-            <li>  Hotel Number 1
+           {% for hotel in myHotels %}
+            <li>{{hotel}}
             <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
+            {% endfor %}
             </ul>
         </p>
 
         <p>My Restaurants</p>
         <p>
             <ul>
-            <li>  Restaurant Number 1
+            {% for restaurant in myRestaurants %}
+            <li>{{restaurant}}
             <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
-
-            <li>  Restaurant Number 2
-            <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
-            <li>  Restaurant Number 3
-            <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
+            {% endfor %}
             </ul>
         </p>
 
         <p>My Activities</p>
         <p>
-            <ul>
-            <li>  Activity Number 1
+           <ul>
+            {% for fun in myActivities %}
+            <li>{{fun}}
             <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
-            <li>  Activity Number 2
-            <input class="btn btn-default btn-xs btn-danger" type="button" value="x"> </li>
+            {% endfor %}
             </ul>
         </p>
 

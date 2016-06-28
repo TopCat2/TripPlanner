@@ -14,12 +14,17 @@ body {
 }
 
 .option-selections select {
-    width: 85%;
+    width: 92%;
 }
 
 .option-days {
     background-color: green;
     padding: 20px 100px 20px 20px;
+}
+
+.option-days ul {
+    width: 92%
+    background-color: purple;
 }
 
 .daybar {
@@ -29,7 +34,7 @@ body {
 }
 
 .map-panel {
-  height: 600px;
+  height: 700px;
     float: left;
     width:60%;
 }
